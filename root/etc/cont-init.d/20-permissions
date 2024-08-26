@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv bash
+
+# permissions
+chown abc:abc -R /config/.local/share/io.github.clash-verge-rev.clash-verge-rev
