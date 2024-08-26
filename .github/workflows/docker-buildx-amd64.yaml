@@ -9,7 +9,8 @@ on:
       - v*
 
 env:
-  REGISTRY: ghcr.io
+  REGISTRY: ${{ vars.REGISTRY }}
+  IMAGE: ${{ vars.IMAGE }}
   ARCH: amd64
 
 jobs:
@@ -24,7 +25,6 @@ jobs:
     steps:
       - name: 设置环境变量
         run: |
-          echo "IMAGE=$GITHUB_REPOSITORY" >> $GITHUB_ENV
           echo "REGISTRY_USERNAME=${{ gitea.repository_owner }}" >> $GITHUB_ENV
           echo "VERSION=$(echo $GITHUB_REF_NAME | sed 's/^v//')" >> $GITHUB_ENV
 
