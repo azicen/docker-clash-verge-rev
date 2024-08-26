@@ -25,7 +25,7 @@ jobs:
     steps:
       - name: 设置环境变量
         run: |
-          echo "REGISTRY_USERNAME=${{ gitea.repository_owner }}" >> $GITHUB_ENV
+          echo "REGISTRY_USERNAME=${{ github.repository_owner }}" >> $GITHUB_ENV
           echo "VERSION=$(echo $GITHUB_REF_NAME | sed 's/^v//')" >> $GITHUB_ENV
 
       - name: 检查环境变量
