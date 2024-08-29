@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Version=1.0
-Name=clash-verge
-Comment=clash-vergestartup script
-Exec=/usr/bin/clash-verge
-StartupNotify=false
-Terminal=false
