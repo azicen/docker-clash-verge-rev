@@ -1,7 +1,7 @@
 services:
   clash-verge-rev:
     container_name: clash-verge-rev
-    image: clash-verge-rev:2.4.4
+    image: adsryen/clash-verge-rev:latest
     environment:
       TZ: ${TZ:-Asia/Shanghai}
       VNC_PORT: ${VNC_PORT:-5901}
