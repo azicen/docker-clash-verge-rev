@@ -1,0 +1,10 @@
+#!/bin/sh
+
+export HOME="/config"
+export XDG_CONFIG_HOME="/config/.config"
+export DISPLAY="${DISPLAY:-:0}"
+
+LOG_DIR="/config/.local/share/io.github.clash-verge-rev.clash-verge-rev/logs"
+mkdir -p "$LOG_DIR"
+
+nohup /usr/bin/clash-verge >"$LOG_DIR/clash-verge-autostart.log" 2>&1 &

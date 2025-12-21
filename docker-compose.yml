@@ -1,0 +1,16 @@
+services:
+  clash-verge-rev:
+    container_name: clash-verge-rev
+    image: clash-verge-rev:2.4.4
+    environment:
+      TZ: ${TZ:-Asia/Shanghai}
+      VNC_PORT: ${VNC_PORT:-5901}
+      NOVNC_PORT: ${NOVNC_PORT:-6081}
+    volumes:
+      - ./config:/config/.local/share/io.github.clash-verge-rev.clash-verge-rev
+    ports:
+      - "${VNC_PORT:-15901}:5901" # vnc端口
+      - "${NOVNC_PORT:-16081}:6081" # novnc端口
+      - "17897:7897" # clash端口
+      - "19097:9097" # clash-dash端口
+    restart: unless-stopped
