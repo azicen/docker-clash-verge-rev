@@ -1,0 +1,23 @@
+services:
+  clash-verge-rev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        TARGETARCH: ${TARGETARCH:-amd64}
+        VERSION: ${VERSION:-2.4.7}
+    image: clash-verge-rev-test
+    container_name: clash-verge-rev
+    security_opt:
+      - seccomp:unconfined # 防止浏览器等应用在容器内出现沙盒权限问题
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./config:/config/.local/share/io.github.clash-verge-rev.clash-verge-rev
+    ports:
+      - "13000:3000" # HTTP 访问端口
+      - "13001:3001" # HTTPS 访问端口
+    shm_size: "2gb" # 提供足够的共享内存避免崩溃
+    restart: unless-stopped
