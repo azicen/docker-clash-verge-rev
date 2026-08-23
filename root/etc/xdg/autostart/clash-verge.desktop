@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Clash Verge
+Exec=/bin/sh /defaults/autostart
+Terminal=false

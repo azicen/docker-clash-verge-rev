@@ -3,7 +3,7 @@ FROM ghcr.io/azicen/debian-desktop:latest
 ARG TARGETARCH
 ARG VERSION
 
-EXPOSE 7897 9097
+EXPOSE 3000 3001 7897 9097
 
 VOLUME /config/.local/share/io.github.clash-verge-rev.clash-verge-rev
 
